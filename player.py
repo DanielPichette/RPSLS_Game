@@ -6,5 +6,5 @@ class Player:
         self.score = 0
 
         # member methods
-        def select(self):
-            pass
+    def select(self):
+        pass
