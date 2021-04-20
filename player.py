@@ -1,3 +1,5 @@
+from human import Human
+from computer import Computer
 class Player:
     def __init__(self):
         self.gestures = ['rock', 'paper', 'scissors', 'lizard', 'spock']
@@ -8,4 +10,7 @@ class Player:
         # member methods
 
     def select(self):
+        pass
+
+    def create_player(self):
         pass

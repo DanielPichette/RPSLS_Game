@@ -16,3 +16,6 @@ class Human(Player):
                     'Sorry that input is invalid. please make sure your input matches an option on the given list. ('
                     'case sensitive)')
                 return selection_prompt
+
+    def create_player(self):
+        self.name = input('what is the name of this player?')
