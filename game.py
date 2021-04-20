@@ -1,12 +1,12 @@
-from player import Player
+# from player import Player
 from human import Human
 from computer import Computer
 
 
 class Game:
     def __init__(self):
-        self.player1 = Player()
-        self.player2 = Player()
+        self.player1 = None
+        self.player2 = None
 
     # member methods
 
@@ -29,13 +29,19 @@ class Game:
         print('Paper disproves Spock')
         print('Spock vaporizes Rock')
 
+    def print_player1(self):
+        print('player 1: ' + self.player1.name)
+
+    def print_player2(self):
+        print('player 2: ' + self.player2.name)
+
     def select_player1(self):
-        player1_prompt = input('is player one a computer player?')
+        player1_prompt = input('is player 1 a computer player?')
         if player1_prompt == 'no':
-            self.player1 = Human.create_player()
+            self.player1 = Human()
             return self.player1
         elif player1_prompt == 'yes':
-            self.player1 = Computer.create_player()
+            self.player1 = Computer()
             return self.player1
         else:
             print('sorry that input is invalid. please print "yes"" or "no"')
@@ -43,8 +49,8 @@ class Game:
     def select_player2(self):
         player2_prompt = input('is player two a computer player?')
         if player2_prompt == 'no':
-            self.player2 = Human.create_player()
+            self.player2 = Human()
             return self.player2
         elif player2_prompt == 'yes':
-            self.player2 = Computer.create_player()
+            self.player2 = Computer()
             return self.player2

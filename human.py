@@ -2,7 +2,8 @@ from player import Player
 
 
 class Human(Player):
-    super().__init__()
+    def __init__(self):
+        super().__init__()
 
     def select(self):
         print(self.gestures)
@@ -19,3 +20,4 @@ class Human(Player):
 
     def create_player(self):
         self.name = input('what is the name of this player?')
+        return self.name
