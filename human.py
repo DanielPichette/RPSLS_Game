@@ -10,13 +10,9 @@ class Human(Player):
         selection_prompt = input('which of the gestures do you choose to throw down?')
         for option in self.gestures:
             if selection_prompt == option:
-                player_selection = selection_prompt
-                return player_selection
-            elif selection_prompt != option:
-                selection_prompt = input(
-                    'Sorry that input is invalid. please make sure your input matches an option on the given list. ('
-                    'case sensitive)')
-                return selection_prompt
+                self.chosen_gesture = selection_prompt
+                return self.chosen_gesture
+
 
     def create_player(self):
         self.name = input('what is the name of this player?')

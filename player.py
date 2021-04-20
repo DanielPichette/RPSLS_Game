@@ -1,8 +1,8 @@
 class Player:
     def __init__(self):
-        self.gestures = ['rock', 'paper', 'scissors', 'lizard', 'spock']
+        self.gestures = ['rock','paper','scissors','lizard','spock']
         self.name = self.create_player()
-        self.chosen_gesture = None
+        self.chosen_gesture = ''
         self.score = 0
 
         # member methods

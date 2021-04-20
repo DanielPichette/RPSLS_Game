@@ -7,8 +7,8 @@ class Computer(Player):
         super().__init__()
 
     def select(self):
-        computer_selection = random.choice(self.gestures)
-        return computer_selection
+        self.chosen_gesture = random.choice(self.gestures)
+        return self.chosen_gesture
 
     def create_player(self):
         self.name = 'computer player'

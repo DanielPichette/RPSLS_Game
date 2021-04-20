@@ -54,3 +54,14 @@ class Game:
         elif player2_prompt == 'yes':
             self.player2 = Computer()
             return self.player2
+
+    def rpsls_shoot(self):
+        print(self.player1.name)
+        self.player1.select()
+        print(self.player2.name)
+        self.player2.select()
+
+    def selections(self):
+        print('selections:')
+        print(self.player1.name + ':' + self.player1.chosen_gesture)
+        print(self.player2.name + ':' + self.player2.chosen_gesture)
