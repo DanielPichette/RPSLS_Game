@@ -180,3 +180,8 @@ class Game:
             print('Spock vaporizes rock!')
             print('player 2:' + self.player2.name + ' wins!')
             return self.player2.score
+
+    def current_score(self):
+        print('current Score')
+        print(f'Player 1 score :{self.player1.score}')
+        print(f'Player 1 score :{self.player2.score}')
