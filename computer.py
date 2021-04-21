@@ -13,4 +13,3 @@ class Computer(Player):
     def create_player(self):
         self.name = 'computer player'
         return self.name
-

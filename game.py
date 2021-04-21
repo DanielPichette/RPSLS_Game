@@ -45,6 +45,7 @@ class Game:
             return self.player1
         else:
             print('sorry that input is invalid. please print "yes"" or "no"')
+            self.select_player1()
 
     def select_player2(self):
         player2_prompt = input('is player two a computer player?')
@@ -54,17 +55,20 @@ class Game:
         elif player2_prompt == 'yes':
             self.player2 = Computer()
             return self.player2
+        else:
+            print('sorry that input is invalid. please print "yes"" or "no"')
+            self.select_player2()
 
     def rpsls_shoot(self):
-        print(self.player1.name)
+        print(f'{self.player1.name}s turn!')
         self.player1.select()
-        print(self.player2.name)
+        print(f'{self.player2.name}s turn!')
         self.player2.select()
 
     def selections(self):
-        print('selections:')
-        print(self.player1.name + ':' + self.player1.chosen_gesture)
-        print(self.player2.name + ':' + self.player2.chosen_gesture)
+        print('     SELECTIONS:')
+        print(f'Player 1 ({self.player1.name}): {self.player1.chosen_gesture}')
+        print(f'Player 2 ({self.player2.name}): {self.player2.chosen_gesture}')
 
     def determine_winner(self):
         # tie
@@ -182,12 +186,12 @@ class Game:
             return self.player2.score
 
     def current_score(self):
-        print('current Score')
+        print('     CURRENT SCORE:')
         print(f'Player 1 ({self.player1.name}) score : {self.player1.score}')
         print(f'Player 2 ({self.player2.name}) score : {self.player2.score}')
 
     def final_score(self):
-        print('The final score is:')
+        print('     THE FINAL SCORE IS:')
         print(f'Player 1 ({self.player1.name}) score : {self.player1.score}')
         print(f'Player 2 ({self.player2.name}) score : {self.player2.score}')
 
@@ -198,12 +202,14 @@ class Game:
             self.determine_winner()
             self.current_score()
             if self.player1.score == 2:
-                print('WE HAVE A WINNER!')
+                print('     WE HAVE A WINNER!')
                 print(f'{self.player1.name} Wins!')
                 self.final_score()
+                print('     WELL PLAYED!')
                 break
             elif self.player2.score == 2:
-                print('WE HAVE A WINNER!')
+                print('     WE HAVE A WINNER!')
                 print(f'{self.player2.name} Wins!')
                 self.final_score()
+                print('     WELL PLAYED!')
                 break
