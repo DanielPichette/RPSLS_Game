@@ -192,16 +192,18 @@ class Game:
         print(f'Player 2 ({self.player2.name}) score : {self.player2.score}')
 
     def best_of_3(self):
-        while self.player1.score or self.player2.score < 3:
+        while self.player1.score or self.player2.score < 2:
             self.rpsls_shoot()
             self.selections()
             self.determine_winner()
             self.current_score()
-        if self.player1.score == 3:
-            print('WE HAVE A WINNER!')
-            print(f'{self.player1} Wins!')
-            self.final_score()
-        elif self.player2.score == 3:
-            print('WE HAVE A WINNER!')
-            print(f'{self.player2} Wins!')
-            self.final_score()
+            if self.player1.score == 2:
+                print('WE HAVE A WINNER!')
+                print(f'{self.player1.name} Wins!')
+                self.final_score()
+                break
+            elif self.player2.score == 2:
+                print('WE HAVE A WINNER!')
+                print(f'{self.player2.name} Wins!')
+                self.final_score()
+                break
