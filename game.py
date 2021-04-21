@@ -65,3 +65,118 @@ class Game:
         print('selections:')
         print(self.player1.name + ':' + self.player1.chosen_gesture)
         print(self.player2.name + ':' + self.player2.chosen_gesture)
+
+    def determine_winner(self):
+        # tie
+        if self.player1.chosen_gesture == self.player2.chosen_gesture:
+            print('Its a tie!')
+        # rock and scissors
+        elif self.player1.chosen_gesture == 'rock' and self.player2.chosen_gesture == 'scissors':
+            self.player1.score += 1
+            print('Rock crushes scissors!')
+            print('player 1:' + self.player1.name + ' wins!')
+            return self.player1.score
+        elif self.player1.chosen_gesture == 'scissors' and self.player2.chosen_gesture == 'rock':
+            self.player2.score += 1
+            print('Rock crushes scissors!')
+            print('player 2:' + self.player2.name + ' wins!')
+            return self.player2.score
+        # scissors and paper
+        elif self.player1.chosen_gesture == 'scissors' and self.player2.chosen_gesture == 'paper':
+            self.player1.score += 1
+            print('scissors cut paper!')
+            print('player 1:' + self.player1.name + ' wins!')
+            return self.player1.score
+        elif self.player1.chosen_gesture == 'paper' and self.player2.chosen_gesture == 'scissors':
+            self.player2.score += 1
+            print('scissors cut paper!')
+            print('player 2:' + self.player2.name + ' wins!')
+            return self.player2.score
+        # paper and rock
+        elif self.player1.chosen_gesture == 'paper' and self.player2.chosen_gesture == 'rock':
+            self.player1.score += 1
+            print('Paper covers rock!')
+            print('player 1:' + self.player1.name + ' wins!')
+            return self.player1.score
+        elif self.player1.chosen_gesture == 'rock' and self.player2.chosen_gesture == 'paper':
+            self.player2.score += 1
+            print('Paper covers rock!')
+            print('player 2:' + self.player2.name + ' wins!')
+            return self.player2.score
+        # rock and lizard
+        elif self.player1.chosen_gesture == 'rock' and self.player2.chosen_gesture == 'lizard':
+            self.player1.score += 1
+            print('Rock crushes lizard!')
+            print('player 1:' + self.player1.name + ' wins!')
+            return self.player1.score
+        elif self.player1.chosen_gesture == 'lizard' and self.player2.chosen_gesture == 'rock':
+            self.player2.score += 1
+            print('Rock crushes lizard!')
+            print('player 2:' + self.player2.name + ' wins!')
+            return self.player2.score
+        # lizard and spock
+        elif self.player1.chosen_gesture == 'lizard' and self.player2.chosen_gesture == 'spock':
+            self.player1.score += 1
+            print('Lizard poisons Spock!')
+            print('player 1:' + self.player1.name + ' wins!')
+            return self.player1.score
+        elif self.player1.chosen_gesture == 'spock' and self.player2.chosen_gesture == 'lizard':
+            self.player2.score += 1
+            print('Lizard poisons Spock!')
+            print('player 2:' + self.player2.name + ' wins!')
+            return self.player2.score
+        # spock scissors
+        elif self.player1.chosen_gesture == 'spock' and self.player2.chosen_gesture == 'scissors':
+            self.player1.score += 1
+            print('Spock smashes scissors!')
+            print('player 1:' + self.player1.name + ' wins!')
+            return self.player1.score
+        elif self.player1.chosen_gesture == 'scissors' and self.player2.chosen_gesture == 'spock':
+            self.player2.score += 1
+            print('Spock smashes scissors!')
+            print('player 2:' + self.player2.name + ' wins!')
+            return self.player2.score
+        # scissors and lizard
+        elif self.player1.chosen_gesture == 'scissors' and self.player2.chosen_gesture == 'lizard':
+            self.player1.score += 1
+            print('Scissors decapitates lizard!')
+            print('player 1:' + self.player1.name + ' wins!')
+            return self.player1.score
+        elif self.player1.chosen_gesture == 'lizard' and self.player2.chosen_gesture == 'scissors':
+            self.player2.score += 1
+            print('Scissors decapitates lizard!')
+            print('player 2:' + self.player2.name + ' wins!')
+            return self.player2.score
+        # lizard and paper
+        elif self.player1.chosen_gesture == 'lizard' and self.player2.chosen_gesture == 'paper':
+            self.player1.score += 1
+            print('Lizard eats paper!')
+            print('player 1:' + self.player1.name + ' wins!')
+            return self.player1.score
+        elif self.player1.chosen_gesture == 'paper' and self.player2.chosen_gesture == 'lizard':
+            self.player2.score += 1
+            print('Lizard eats paper!')
+            print('player 2:' + self.player2.name + ' wins!')
+            return self.player2.score
+        # paper and spock
+        elif self.player1.chosen_gesture == 'paper' and self.player2.chosen_gesture == 'spock':
+            self.player1.score += 1
+            print('Paper disproves Spock!')
+            print('player 1:' + self.player1.name + ' wins!')
+            return self.player1.score
+        elif self.player1.chosen_gesture == 'spock' and self.player2.chosen_gesture == 'paper':
+            self.player2.score += 1
+            print('Paper disproves Spock!')
+            print('player 2:' + self.player2.name + ' wins!')
+            return self.player2.score
+        # spock and rock
+        elif self.player1.chosen_gesture == 'spock' and self.player2.chosen_gesture == 'rock':
+            self.player1.score += 1
+            print('Spock vaporizes rock!')
+            print('player 1:' + self.player1.name + ' wins!')
+            return self.player1.score
+        elif self.player1.chosen_gesture == 'rock' and self.player2.chosen_gesture == 'spock':
+            self.player2.score += 1
+            print('Spock vaporizes rock!')
+            print('player 2:' + self.player2.name + ' wins!')
+            return self.player2.score
