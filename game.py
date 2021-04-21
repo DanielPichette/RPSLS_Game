@@ -183,5 +183,24 @@ class Game:
 
     def current_score(self):
         print('current Score')
-        print(f'Player 1 score :{self.player1.score}')
-        print(f'Player 1 score :{self.player2.score}')
+        print(f'Player 1 ({self.player1.name}) score : {self.player1.score}')
+        print(f'Player 1 ({self.player2.name}) score : {self.player2.score}')
+
+    def final_score(self):
+        print('The final score is:')
+        print(f'Player 1 ({self.player1.name}) score : {self.player1.score}')
+        print(f'Player 1 ({self.player2.name}) score : {self.player2.score}')
+
+    def best_of_3(self):
+        while self.player1.score or self.player2.score < 3:
+            self.selections()
+            self.determine_winner()
+            self.current_score()
+        if self.player1.score == 3:
+            print('WE HAVE A WINNER!')
+            print(f"{self.player1} Wins!)
+            self.final_score()
+        elif self.player2.score == 3:
+            print('WE HAVE A WINNER!')
+            print(f"{self.player2} Wins!)
+            self.final_score()
