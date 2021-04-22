@@ -15,19 +15,33 @@ class Game:
               'PAPER SCISSORS SPOCK!')
 
     def rules(self):
-        print('How to play:')
-        print('this updated version the the old classic game is pretty similar just with a few new gesture options to '
+        print('     HOW TO PLAY::')
+        print('this updated version the the old classic game is pretty similar just with a few additions '
               'throw down.')
-        print('Rock crushes Scissors')
-        print('Scissors cuts Paper')
-        print('Paper covers Rock')
-        print('Rock crushes Lizard')
-        print('Lizard poisons Spock')
-        print('Spock smashes Scissors')
-        print('Scissors decapitates Lizard')
-        print('Lizard eats Paper')
-        print('Paper disproves Spock')
-        print('Spock vaporizes Rock')
+        print('     RULES:')
+        print('-Rock crushes Scissors')
+        print('-Scissors cuts Paper')
+        print('-Paper covers Rock')
+        print('-Rock crushes Lizard')
+        print('-Lizard poisons Spock')
+        print('-Spock smashes Scissors')
+        print('-Scissors decapitates Lizard')
+        print('-Lizard eats Paper')
+        print('-Paper disproves Spock')
+        print('-Spock vaporizes Rock')
+        print("Now that you're all up to speed with the rules, lets start the game!")
+        print('Lets start with best out of 3.')
+
+    def rules_prompt(self):
+        rule_prompt = input('Are you familiar with the rules?')
+        if rule_prompt == 'yes':
+            print('Fantastic!')
+            print('Lets start with best out of 3.')
+        elif rule_prompt == 'no':
+            self.rules()
+        else:
+            print('sorry that input is invalid. please print "yes"" or "no"')
+            self.rules_prompt()
 
     def print_player1(self):
         print('player 1: ' + self.player1.name)
@@ -60,9 +74,9 @@ class Game:
             self.select_player2()
 
     def rpsls_shoot(self):
-        print(f'{self.player1.name}s turn!')
+        print(f'    {self.player1.name}s turn!')
         self.player1.select()
-        print(f'{self.player2.name}s turn!')
+        print(f'    {self.player2.name}s turn!')
         self.player2.select()
 
     def selections(self):
@@ -213,3 +227,34 @@ class Game:
                 self.final_score()
                 print('     WELL PLAYED!')
                 break
+
+    def end_game(self):
+        if self.player1.score > self.player2.score:
+            print(f'Player 1 ({self.player1.name}) Is the Winner!')
+        elif self.player1.score < self.player2.score:
+            print(f'Player 2 ({self.player2.name}) Is the Winner!')
+        elif self.player1.score == self.player2.score:
+            print("It's a Tie!")
+
+    def continue_playing_prompt(self):
+        continue_game = input('Would you like to continue playing?')
+        if continue_game == 'yes':
+            self.rpsls_shoot()
+            self.selections()
+            self.determine_winner()
+            self.continue_playing_prompt()
+        elif continue_game == 'no':
+            self.end_game()
+            self.final_score()
+            print('Thanks for playing!')
+        else:
+            print("Sorry i didn't recognize that input. please make sure your input is 'yes' or 'no'")
+            self.continue_playing_prompt()
+
+    def run_game(self):
+        self.welcome()
+        self.rules_prompt()
+        self.select_player1()
+        self.select_player2()
+        self.best_of_3()
+        self.continue_playing_prompt()
